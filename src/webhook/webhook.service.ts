@@ -1,6 +1,5 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
-import { AxiosResponse } from 'axios';
 import { lastValueFrom, Observable } from 'rxjs';
 import { BodyDto } from './dto/BodyDto';
 
@@ -8,7 +7,7 @@ import { BodyDto } from './dto/BodyDto';
 export class WebhookService {
   constructor(private readonly httpService: HttpService) {}
 
-  async testN8n(body: BodyDto) {
+  async SendResponseN8NTo(body: BodyDto) {
     try {
       const response = await lastValueFrom(
         this.httpService.post(

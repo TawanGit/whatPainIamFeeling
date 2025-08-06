@@ -13,7 +13,7 @@ export class WebhookController {
   @Post()
   sendDataToN8N(@Body() body: BodyDto) {
     try {
-      return this.webhookService.testN8n(body);
+      return this.webhookService.SendResponseN8NTo(body);
     } catch (e) {
       return new InternalServerErrorException(e.message);
     }
